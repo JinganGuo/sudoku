@@ -1,0 +1,14 @@
+安装yarn（https://yarn.bootcss.com/）
+   1. Yarn 是一个依赖管理工具。它能够管理你的代码，并与全世界的开发者分享代码。
+   2. 代码是通过包（有时也被称为模块）进行共享的。 在每一个包中包含了所有需要共享的代码，另外还定义了一个 package.json 文件，用来描述这个包。
+
+安装一些依赖包
+src目录下，初始化：yarn init
+yarn add --dev gulp gulp-util   (PS: --dev 同 -D)
+yarn add --dev gulp-less
+yarn add -D webpack-stream
+yarn add --dev babel-core babel-loader babel-loader babel-preset-es2015
+
+在src目录下创建gulpfile.js文件
+
+创建webpack.config.js文件
