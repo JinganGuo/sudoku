@@ -23,6 +23,16 @@ const matrixToolKit = {
             [array[i], array[j]] = [array[j], array[i]];
         }
         return array;
+    },
+
+    /**
+     * 检查指定位置可以填写 n 
+     */
+    checkFillable(matrix, n, rowIndex, colIndex) {
+        const row = matrix[rowIndex];
+        const column = this.makeRow().map((v, i) => matrix[i][colIndex]);
+        // const boxIndex = 
+        return true;
     }
 };
 
@@ -30,7 +40,19 @@ const matrixToolKit = {
  * 宫坐标系工具
  */
 const boxToolkit = {
-    // Todo
+    convertToBoxIndex(rowIndex, colIndex) {
+        return {
+            boxIndex: Math.floor(rowIndex / 3) * 3 + Math.floor(colIndex / 3),
+            cellIndex: rowIndex % 3 * 3 + colIndex % 3
+        };
+    },
+
+    contertFromBoxIndex(boxIndex, cellIndex){
+        return {
+
+        };
+    }
+
 }
 
 
