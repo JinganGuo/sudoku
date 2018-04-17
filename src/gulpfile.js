@@ -10,7 +10,7 @@ gulp.task("webpack", () => {
 });
 
 // 编译less -> css
-gulp.task("less", () => {
+gulp.task("less", () => {   
     const less = require("gulp-less");
     gulp.src("./less/*.less")
         .pipe(less())

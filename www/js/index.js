@@ -60,33 +60,65 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-const matrixToolKit = {
-    makeRow(v = 0) {
-        const array = new Array(9);
+"use strict";
+
+
+var toolkit = __webpack_require__(1);
+var matrix = toolkit.makeMatrix();
+
+console.log(matrix);
+
+var a = Array.from({ length: 9 }, function (v, i) {
+  return i;
+});
+
+console.log(a);
+
+console.log(toolkit.shuffle(a));
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var matrixToolKit = {
+    makeRow: function makeRow() {
+        var v = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+
+        var array = new Array(9);
         array.fill(v);
         return array;
     },
-    
-    makeMatrix(v = 0) {
-        return Array.from({length: 9},
-            () => this.makeRow(v));
+    makeMatrix: function makeMatrix() {
+        var _this = this;
+
+        var v = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+
+        return Array.from({ length: 9 }, function () {
+            return _this.makeRow(v);
+        });
     },
-    
+
+
     /**
      * Fisher-Yates 洗牌算法
      */
-    shuffle(array) {
-        const endIndex = array.length -2;
-        for(let i = 0; i < endIndex; i++) {
-            const j = i + Math.floor(Math.random() * (array.length - i));
-            [array[i], array[j]] = [array[j], array[i]];
+    shuffle: function shuffle(array) {
+        var endIndex = array.length - 2;
+        for (var i = 0; i < endIndex; i++) {
+            var j = i + Math.floor(Math.random() * (array.length - i));
+            var _ref = [array[j], array[i]];
+            array[i] = _ref[0];
+            array[j] = _ref[1];
         }
         return array;
     }
@@ -94,30 +126,6 @@ const matrixToolKit = {
 
 module.exports = matrixToolKit;
 
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(2);
-module.exports = __webpack_require__(0);
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const toolkit = __webpack_require__(0);
-const matrix = toolkit.makeMatrix();
-
-console.log(matrix);
-
-const a = Array.from({length: 9}, (v, i) => i);
-
-console.log(a);
-
-console.log(toolkit.shuffle(a));
-
 /***/ })
 /******/ ]);
+//# sourceMappingURL=index.js.map
