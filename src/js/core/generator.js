@@ -42,6 +42,7 @@ class Generator {
             // 如果这个位置已经有值，则跳过
             if(row[colIndex]) {
                 continue;
+                
             }
 
             // 检查这个位置是否可以填n
