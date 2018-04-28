@@ -43,6 +43,7 @@ class Generator {
             if(row[colIndex]) {
                 continue;
                 
+
             }
 
             // 检查这个位置是否可以填n
